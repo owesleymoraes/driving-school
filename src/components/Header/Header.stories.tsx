@@ -15,14 +15,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    title: "Ganhe sua limberdade para ir e vir",
-    children: (
-      <ul>
-        <li>item da lista</li>
-        <li>item da lista</li>
-        <li>item da lista</li>
-        <li>item da lista</li>
-      </ul>
-    ),
+    title: "Liberdade Para Seguir",
+    itemList: [
+      "item 1",
+      "item 2",
+      "item 3",
+      "item 4",
+      "item 5",
+    ]
   },
 };

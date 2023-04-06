@@ -1,19 +1,31 @@
 import React from "react";
 import * as Styled from "./styles";
+import GlobalStyle from "../../GlobalStyle";
 
 interface HeaderProps {
   title: string;
-  children: React.ReactNode;
+  itemList: string[];
 }
 
-export const Header: React.FC<HeaderProps> = ({ title, children }) => {
+export const Header: React.FC<HeaderProps> = ({ title, itemList }) => {
   return (
+    <>
+    <GlobalStyle />
     <Styled.HeaderContainer>
       <Styled.WrapperHeader>
         <Styled.TitleHeader>{title}</Styled.TitleHeader>
-        {children}
+        <Styled.InfoHeaderContainer>
+          <Styled.InfoHeaderContainer>
+            {itemList.map((item, key) => {
+              return (
+                <Styled.InfoHeaderList key={key}>{item}</Styled.InfoHeaderList>
+              );
+            })}
+          </Styled.InfoHeaderContainer>
+        </Styled.InfoHeaderContainer>
         <Styled.ButtonHeader>MATRICULE-SE AGORA</Styled.ButtonHeader>
       </Styled.WrapperHeader>
     </Styled.HeaderContainer>
+    </>
   );
 };
