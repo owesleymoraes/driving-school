@@ -1,31 +1,41 @@
 import React from "react";
 import * as Styled from "./styles";
 import GlobalStyle from "../../GlobalStyle";
+import { Title } from "../Title";
+import { Button } from "../Button";
 
 interface HeaderProps {
-  title: string;
   itemList: string[];
 }
 
-export const Header: React.FC<HeaderProps> = ({ title, itemList }) => {
+export const Header: React.FC<HeaderProps> = ({ itemList }) => {
   return (
     <>
-    <GlobalStyle />
-    <Styled.HeaderContainer>
-      <Styled.WrapperHeader>
-        <Styled.TitleHeader>{title}</Styled.TitleHeader>
-        <Styled.InfoHeaderContainer>
+      <GlobalStyle />
+      <Styled.HeaderContainer>
+        <Styled.WrapperHeader>
+          <Title
+            description={
+              <span>
+                Ganhe sua <strong>Liberdade</strong>
+                <br /> para ir e vir
+              </span>
+            }
+          />
           <Styled.InfoHeaderContainer>
-            {itemList.map((item, key) => {
-              return (
-                <Styled.InfoHeaderList key={key}>{item}</Styled.InfoHeaderList>
-              );
-            })}
+            <Styled.InfoHeaderContainer>
+              {itemList.map((item, key) => {
+                return (
+                  <Styled.InfoHeaderList key={key}>
+                    {item}
+                  </Styled.InfoHeaderList>
+                );
+              })}
+            </Styled.InfoHeaderContainer>
           </Styled.InfoHeaderContainer>
-        </Styled.InfoHeaderContainer>
-        <Styled.ButtonHeader>MATRICULE-SE AGORA</Styled.ButtonHeader>
-      </Styled.WrapperHeader>
-    </Styled.HeaderContainer>
+          <Button onClick={() => {}}>MATRICULE-SE AGORA</Button>
+        </Styled.WrapperHeader>
+      </Styled.HeaderContainer>
     </>
   );
 };

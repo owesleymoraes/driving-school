@@ -2,6 +2,8 @@ import styled from "styled-components";
 import img from "../../assets/car.jpg";
 import { screenBreakPoint, BreakPointSize } from "../../BreakPointSize";
 
+const yellowCustom = "#ffc107";
+
 export const HeaderContainer = styled.div`
   color: #fff;
   padding: 100px 0;
@@ -26,11 +28,6 @@ export const WrapperHeader = styled.div`
   }
 `;
 
-export const TitleHeader = styled.h1`
-  font-size: 32px;
-  letter-spacing: 2px;
-`;
-
 export const InfoHeaderContainer = styled.ul`
   list-style: none;
   padding-left: 0;
@@ -42,7 +39,6 @@ export const InfoHeaderList = styled.li`
 
   &:before {
     content: "\\2713\\0020";
+    color: ${yellowCustom};
   }
 `;
-
-export const ButtonHeader = styled.button``;
