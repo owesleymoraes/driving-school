@@ -10,7 +10,7 @@ export const Title: React.FC<TitleProps> = ({ description }) => {
   return (
     <>
       <Styled.Title>{description}</Styled.Title>
-      <BottomBar colorBar={"orange"} />
+      <BottomBar colorBar="orange" />
     </>
   );
 };
