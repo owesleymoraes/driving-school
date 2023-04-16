@@ -1,6 +1,6 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
-import { screenBreakPoint, BreakPointSize } from "./BreakPointSize";
+import { screenBreakPoint, BreakPointSize } from "../BreakPointSize";
 
 const GlobalStyle = createGlobalStyle`
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap");
