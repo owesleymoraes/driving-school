@@ -1,6 +1,6 @@
 import React from "react";
 import * as Styled from "./styles";
-import GlobalStyle from "../../GlobalStyle";
+import GlobalStyle from "../../styles/GlobalStyle";
 import { Title } from "../Title";
 import { Button } from "../Button";
 
