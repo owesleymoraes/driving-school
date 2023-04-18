@@ -1,8 +1,8 @@
 import React from "react";
 import * as Styled from "./styles";
-import GlobalStyle from "../../styles/GlobalStyle";
 import { Title } from "../Title";
 import { Button } from "../Button";
+import GlobalStyle from "../../styles/GlobalStyle";
 
 interface HeaderProps {
   itemList: string[];
