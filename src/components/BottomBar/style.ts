@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 const changeColorBar = (color: string) => {
-  if (color === "orange") return "#ffc107";
-  if (color === "black") return "#000000";
-  if (color === "white") return "#ffffff";
   if (color === "red") return "#ff0000";
+  if (color === "white") return "#ffffff";
+  if (color === "black") return "#000000";
+  if (color === "orange") return "#ffc107";
 };
 
 export const BottomBar = styled.div<{ colorBar: string }>`
