@@ -9,6 +9,8 @@ interface ButtonProps extends InputHTMLAttributes<ButtonProps> {
   isDisabled?: boolean;
   borderRadius?: number;
   backgroundColor?: string;
+  marginTop?: number;
+  marginBottom?: number;
 
   onClick: () => void;
 }
@@ -22,12 +24,20 @@ export const Button: React.FC<ButtonProps> = ({
   height = 48,
   color = "#212121",
   isDisabled,
+ 
 }) => {
   return (
     <Styled.ButtonContainer>
       <Styled.Button
         disabled={isDisabled}
-        style={{ backgroundColor, width, height, borderRadius, color }}
+        style={{
+          backgroundColor,
+          width,
+          height,
+          borderRadius,
+          color,
+         
+        }}
         onClick={onClick}
       >
         {children}
