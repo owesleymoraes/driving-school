@@ -1,5 +1,19 @@
 import styled from "styled-components";
 
+export const ButtonColors = {
+  danger: "danger",
+  default: "default",
+  primary: "primary",
+};
+
+export const ButtonVariants = {
+  link: "link",
+  default: "default",
+  outlined: "outlined",
+};
+
+
+
 export const ButtonContainer = styled.div``;
 
 export const Button = styled.button`
@@ -11,8 +25,7 @@ export const Button = styled.button`
   border: 2px solid #ffc107;
 
   &:hover:enabled {
-    background: #c79100;
-    color: red;
+    opacity: 0.6;
   }
 
   &:disabled {
