@@ -35,7 +35,14 @@ export const Header: React.FC<HeaderProps> = ({ itemList }) => {
                 })}
               </Styled.InfoHeaderContainer>
             </Styled.InfoHeaderContainer>
-            <Button onClick={() => {}}>MATRICULE-SE AGORA</Button>
+            <Button 
+            width={240}
+            borderRadius={8}
+            backgroundColor="#ffc107"
+            
+            
+
+             onClick={() => {}}>MATRICULE-SE AGORA</Button>
           </Styled.WrapperHeader>
         </Styled.HeaderContainer>
       </ThemeProvider>
