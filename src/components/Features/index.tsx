@@ -4,15 +4,18 @@ import { FaCar } from "react-icons/fa";
 
 interface FeatureProps {
   title: string;
+  icon?: React.ReactNode
   children?: React.ReactNode | React.ReactNode[];
 }
 
-export const Feature: React.FC<FeatureProps> = ({ title, children }) => {
+export const Feature: React.FC<FeatureProps> = ({icon, title, children }) => {
   return (
     <Styled.ContainerFeature>
-      <Styled.Icon>
-        <FaCar />
-      </Styled.Icon>
+      <Styled.IconWrapper>
+        <Styled.Icon>
+         {icon}
+        </Styled.Icon>
+      </Styled.IconWrapper>
       <Styled.Title>{title}</Styled.Title>
       <Styled.Children>{children}</Styled.Children>
     </Styled.ContainerFeature>
