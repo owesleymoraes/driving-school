@@ -6,46 +6,39 @@ import GlobalStyle from "../../styles/GlobalStyle";
 import { ThemeProvider } from "../../styles/ThemeProvider";
 
 interface HeaderProps {
-  itemList: string[];
+  children: string[];
 }
 
-export const Header: React.FC<HeaderProps> = ({ itemList }) => {
+export const Header: React.FC<HeaderProps> = ({ children }) => {
   return (
-    
-      <ThemeProvider>
-        <GlobalStyle />
-        <Styled.HeaderContainer>
-          <Styled.WrapperHeader>
-            <Title
-              description={
-                <span>
-                  Ganhe sua <strong>Liberdade</strong>
-                  <br /> para ir e vir
-                </span>
-              }
-            />
-            <Styled.InfoHeaderContainer>
-              <Styled.InfoHeaderContainer>
-                {itemList.map((item, key) => {
-                  return (
-                    <Styled.InfoHeaderList key={key}>
-                      {item}
-                    </Styled.InfoHeaderList>
-                  );
-                })}
-              </Styled.InfoHeaderContainer>
-            </Styled.InfoHeaderContainer>
-            <Button 
-            width={240}
-            borderRadius={8}
-            backgroundColor="#ffc107"
-            
-            
-
-             onClick={() => {}}>MATRICULE-SE AGORA</Button>
-          </Styled.WrapperHeader>
-        </Styled.HeaderContainer>
-      </ThemeProvider>
-    
+    <Styled.HeaderContainer>
+      <Styled.WrapperHeader>
+        <Title
+          description={
+            <span>
+              Ganhe sua <strong>Liberdade</strong>
+              <br /> para ir e vir
+            </span>
+          }
+        />
+        <Styled.InfoHeaderContainer>
+          <Styled.InfoHeaderContainer>
+            {children.map((item, key) => {
+              return (
+                <Styled.InfoHeaderList key={key}>{item}</Styled.InfoHeaderList>
+              );
+            })}
+          </Styled.InfoHeaderContainer>
+        </Styled.InfoHeaderContainer>
+        <Button
+          width={240}
+          borderRadius={8}
+          backgroundColor="#ffc107"
+          onClick={() => {}}
+        >
+          MATRICULE-SE AGORA
+        </Button>
+      </Styled.WrapperHeader>
+    </Styled.HeaderContainer>
   );
 };
