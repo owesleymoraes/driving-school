@@ -6,6 +6,7 @@ export const ContainerGrid = styled.div<{ frOfGrid?: number }>`
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   grid-template-columns: 1fr;
+  
 
   ${screenBreakPoint(BreakPointSize.sm)} {
     grid-template-columns: repeat(2, 1fr);
