@@ -1,13 +1,8 @@
 import React from "react";
 import { Feature } from ".";
 import type { Meta, StoryObj } from "@storybook/react";
-import {
-  FaCar,
-  FaKey,
-  FaMapMarkedAlt,
-  FaAccessibleIcon,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+import { FaCar, FaKey, FaAccessibleIcon, FaMapMarkerAlt } from "react-icons/fa";
+import { Grid } from "../Grid";
 
 const meta = {
   title: "Feature",
@@ -30,7 +25,7 @@ export const Default: Story = {
 
 export const WithGrid: React.FC = () => {
   return (
-    <div>
+    <Grid>
       <Feature icon={<FaCar />} title="Maior e melhor frota">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi quod
@@ -55,6 +50,6 @@ export const WithGrid: React.FC = () => {
           similique aperiam amet quaerat error repudiandae dolorum.
         </p>
       </Feature>
-    </div>
+    </Grid>
   );
 };

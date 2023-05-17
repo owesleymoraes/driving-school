@@ -36,7 +36,7 @@ export const Icon = styled.div`
   transition: 0.8s;
 `;
 
-export const Title = styled.h5`
+export const Title = styled.h3`
   margin: 16px 0;
 `;
 
