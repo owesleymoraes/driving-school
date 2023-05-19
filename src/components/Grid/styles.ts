@@ -3,9 +3,15 @@ import { screenBreakPoint, BreakPointSize } from "../../BreakPointSize";
 
 export const ContainerGrid = styled.div<{ frOfGrid?: number }>`
   display: grid;
-  grid-column-gap: 16px;
+  grid-column-gap: 17.8%;
   grid-row-gap: 16px;
   grid-template-columns: 1fr;
+
+  @media (max-width: 1190px ) {
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    grid-template-columns: 1fr;
+  }
   
 
   ${screenBreakPoint(BreakPointSize.sm)} {
