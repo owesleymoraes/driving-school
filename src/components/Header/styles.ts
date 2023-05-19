@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import img from "../../assets/car.jpg";
-import { screenBreakPoint, BreakPointSize } from "../../BreakPointSize";
 
 const yellowCustom = "#ffc107";
 
@@ -11,21 +10,6 @@ export const HeaderContainer = styled.div`
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;
-`;
-
-export const WrapperHeader = styled.div`
-  max-width: 100%;
-  padding: 0 8px;
-
-  ${screenBreakPoint(BreakPointSize.sm)} {
-    padding: 0 16px;
-  }
-
-  ${screenBreakPoint(BreakPointSize.xl)} {
-    width: 1140px;
-    padding: 0;
-    margin: 0 auto;
-  }
 `;
 
 export const InfoHeaderContainer = styled.ul`

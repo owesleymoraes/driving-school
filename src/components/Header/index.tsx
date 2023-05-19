@@ -1,9 +1,9 @@
 import React from "react";
-import * as Styled from "./styles";
 import { Title } from "../Title";
 import { Button } from "../Button";
-import GlobalStyle from "../../styles/GlobalStyle";
-import { ThemeProvider } from "../../styles/ThemeProvider";
+import { Container } from "../Container";
+
+import * as Styled from "./styles";
 
 interface HeaderProps {
   children: string[];
@@ -12,7 +12,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ children }) => {
   return (
     <Styled.HeaderContainer>
-      <Styled.WrapperHeader>
+      <Container>
         <Title
           description={
             <span>
@@ -38,7 +38,7 @@ export const Header: React.FC<HeaderProps> = ({ children }) => {
         >
           MATRICULE-SE AGORA
         </Button>
-      </Styled.WrapperHeader>
+      </Container>
     </Styled.HeaderContainer>
   );
 };
