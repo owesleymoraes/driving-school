@@ -5,12 +5,16 @@ import * as Styled from "./styles";
 
 interface SectionsProps {
   children: React.ReactNode | React.ReactNode[];
+  inverse?: boolean;
 }
 
-export const Sections: React.FC<SectionsProps> = ({ children }) => {
+export const Sections: React.FC<SectionsProps> = ({
+  children,
+  inverse = false,
+}) => {
   return (
-    <Container>
-      <Styled.Content>{children}</Styled.Content>
-    </Container>
+    <Styled.Content inverse={inverse}>
+      <Container>{children}</Container>
+    </Styled.Content>
   );
 };
