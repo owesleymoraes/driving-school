@@ -1,6 +1,5 @@
 import React from "react";
 import * as Styled from "./styles";
-import { FaCar } from "react-icons/fa";
 
 interface FeatureProps {
   title: string;
