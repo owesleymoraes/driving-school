@@ -20,6 +20,7 @@ export const H2 = styled.h2`
   font-weight: 700;
   margin-bottom: 4px;
   padding-bottom: 4px;
+  margin-top: 0;
 
   strong {
     color: ${yellowCustom};

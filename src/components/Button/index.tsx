@@ -6,25 +6,27 @@ interface ButtonProps extends InputHTMLAttributes<ButtonProps> {
   width?: number;
   height?: number;
   children: string;
+  fontSize?: number;
+  marginTop?: number;
   isDisabled?: boolean;
   borderRadius?: number;
-  backgroundColor?: string;
-  marginTop?: number;
   marginBottom?: number;
+  backgroundColor?: string;
 
   onClick: () => void;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   children,
-  onClick,
-  backgroundColor = "#ffc107",
-  borderRadius,
   width = 120,
   height = 48,
-  color = "#212121",
+  fontSize = 16,
   isDisabled,
- 
+  borderRadius,
+  color = "#212121",
+  backgroundColor = "#ffc107",
+
+  onClick,
 }) => {
   return (
     <Styled.ButtonContainer>
@@ -36,7 +38,7 @@ export const Button: React.FC<ButtonProps> = ({
           height,
           borderRadius,
           color,
-         
+          fontSize,
         }}
         onClick={onClick}
       >
