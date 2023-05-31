@@ -53,6 +53,7 @@ export const H4 = styled.h4`
 
 export const H5 = styled.h5`
   position: relative;
+  white-space: nowrap;
   letter-spacing: 2px;
   font-weight: 700;
   margin-bottom: 4px;
