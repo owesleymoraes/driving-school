@@ -9,6 +9,7 @@ import { Sections } from "../../components/Sections";
 import { FaAccessibleIcon, FaCar, FaKey, FaMapMarkerAlt } from "react-icons/fa";
 
 import * as Styled from "./styles";
+import { Footer } from "../../components/Footer";
 
 export const HomePage: React.FC = () => {
   const itemList = ["item 1", "item 2", "item 3", "item 4", "item 5"];
@@ -68,6 +69,7 @@ export const HomePage: React.FC = () => {
       <Sections inverse>
         <Title tagOfTitle="h2" description={"Dúvidas recorrentes"}></Title>
       </Sections>
+      <Footer/>
     </>
   );
 };
