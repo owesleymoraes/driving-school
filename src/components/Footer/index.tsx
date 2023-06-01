@@ -8,10 +8,10 @@ import * as Styled from "./styles";
 
 export const Footer: React.FC = () => {
   return (
-    <Container>
-      <Styled.Root>
+    <Styled.Root>
+      <Container>
         <Grid>
-          <Styled.AboutFooter>
+          <div>
             <Title tagOfTitle="h5" description={"Moraes Auto Escola"} />
             <Styled.InformationText>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi
@@ -19,43 +19,41 @@ export const Footer: React.FC = () => {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi
               quod similique aperiam amet quaerat error repudiandae dolorum.
             </Styled.InformationText>
-          </Styled.AboutFooter>
-          <Styled.ContactsFooter>
+          </div>
+          <div>
             <Title tagOfTitle="h5" description={"Contatos"} />
             <Styled.WrapperContacts>
-              <Styled.InfoContacts>
+              <Styled.InfoContacts isColor={false}>
                 <Styled.IconContacts>
                   <FaPhone />
                 </Styled.IconContacts>
                 <Styled.InformationText>(85) 9 92957907</Styled.InformationText>
               </Styled.InfoContacts>
             </Styled.WrapperContacts>
-          </Styled.ContactsFooter>
-          <Styled.SocialMediaFooter>
+          </div>
+          <div>
             <Title tagOfTitle="h5" description={"Redes Sociais"} />
-            <Styled.WrapperContacts>
-              <Styled.InfoContacts isColor={true} onClick={() => {}}>
-                <Styled.IconContacts>
-                  <FaFacebookF />
-                </Styled.IconContacts>
-                <Styled.InformationText>Facebook</Styled.InformationText>
-              </Styled.InfoContacts>
-              <Styled.InfoContacts isColor={true} onClick={() => {}}>
-                <Styled.IconContacts>
-                  <FaLinkedinIn />
-                </Styled.IconContacts>
-                <Styled.InformationText>Linkedin</Styled.InformationText>
-              </Styled.InfoContacts>
-              <Styled.InfoContacts isColor={true} onClick={() => {}}>
-                <Styled.IconContacts>
-                  <FaTwitter />
-                </Styled.IconContacts>
-                <Styled.InformationText>Twitter</Styled.InformationText>
-              </Styled.InfoContacts>
-            </Styled.WrapperContacts>
-          </Styled.SocialMediaFooter>
+            <Styled.InfoContacts isColor={true} onClick={() => {}}>
+              <Styled.IconContacts>
+                <FaFacebookF />
+              </Styled.IconContacts>
+              <Styled.LabelSocialMedia>Facebook</Styled.LabelSocialMedia>
+            </Styled.InfoContacts>
+            <Styled.InfoContacts isColor={true} onClick={() => {}}>
+              <Styled.IconContacts>
+                <FaLinkedinIn />
+              </Styled.IconContacts>
+              <Styled.LabelSocialMedia>Linkedin</Styled.LabelSocialMedia>
+            </Styled.InfoContacts>
+            <Styled.InfoContacts isColor={true} onClick={() => {}}>
+              <Styled.IconContacts>
+                <FaTwitter />
+              </Styled.IconContacts>
+              <Styled.LabelSocialMedia>Twitter</Styled.LabelSocialMedia>
+            </Styled.InfoContacts>
+          </div>
         </Grid>
-      </Styled.Root>
-    </Container>
+      </Container>
+    </Styled.Root>
   );
 };
