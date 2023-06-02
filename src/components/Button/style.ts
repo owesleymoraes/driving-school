@@ -21,7 +21,7 @@ export const Button = styled.button`
   text-transform: uppercase;
   padding: 12px;
   cursor: pointer;
-  border: 2px solid #ffc107;
+  border: 1px solid #ffc107;
   align-items: center;
 
   &:hover:enabled {
