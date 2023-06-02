@@ -1,15 +1,19 @@
 import React from "react";
 import { Grid } from "../../components/Grid";
+import { Card } from "../../components/Card";
 import { Title } from "../../components/Title";
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
+import { Footer } from "../../components/Footer";
 import trafficCar from "../../assets/traffic.mp4";
+import walletCar from "../../assets/wallet-car.jpg";
 import { Feature } from "../../components/Features";
 import { Sections } from "../../components/Sections";
+import walletMotor from "../../assets/wallet-moto.jpg";
+import walletCarMotor from "../../assets/wallet-car-moto.jpg";
 import { FaAccessibleIcon, FaCar, FaKey, FaMapMarkerAlt } from "react-icons/fa";
 
 import * as Styled from "./styles";
-import { Footer } from "../../components/Footer";
 
 export const HomePage: React.FC = () => {
   const itemList = ["item 1", "item 2", "item 3", "item 4", "item 5"];
@@ -46,6 +50,12 @@ export const HomePage: React.FC = () => {
       </Sections>
       <Sections inverse>
         <Title tagOfTitle="h2" description={"Conheça nossos serviços"}></Title>
+        <Card
+          nameImg={walletCarMotor as any}
+          title="1ª Habilitação carro e moto"
+          description="Melhor preço para o combinado carro e moto."
+          onClick={() => {}}
+        />
       </Sections>
 
       <Styled.SectionAbout>
@@ -69,7 +79,7 @@ export const HomePage: React.FC = () => {
       <Sections inverse>
         <Title tagOfTitle="h2" description={"Dúvidas recorrentes"}></Title>
       </Sections>
-      <Footer/>
+      <Footer />
     </>
   );
 };
