@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Root = styled.div`
   display: flex;
   justify-content: space-between;
@@ -25,14 +24,18 @@ export const InfoContacts = styled.div<{ isColor?: boolean }>`
   flex-direction: row;
   cursor: ${(props) => (props.isColor ? "pointer" : " ")};
   color: ${(props) => (props.isColor ? "#ffc107" : "#cecece")};
+
+  & :hover {
+    color: #fff;
+  }
 `;
 
 export const IconContacts = styled.div<{ isColor?: boolean }>`
   margin-right: 8px;
+  margin-top: 12px;
 `;
 
-export const SocialMediaFooter = styled.div`
-`;
+export const SocialMediaFooter = styled.div``;
 
 export const InformationText = styled.p`
   font-size: 12px;
@@ -41,7 +44,7 @@ export const InformationText = styled.p`
 `;
 
 export const LabelSocialMedia = styled.p`
-font-size: 12px;
+  font-size: 12px;
   width: 200px;
   color: "#ffc103";
-`
+`;
