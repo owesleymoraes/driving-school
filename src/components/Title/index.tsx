@@ -25,6 +25,9 @@ export const Title: React.FC<TitleProps> = ({ description, tagOfTitle }) => {
       case "h5":
         return Styled.H5;
 
+      case "h6":
+        return Styled.H6;
+
       default:
         return Styled.H1;
     }

@@ -63,3 +63,17 @@ export const H5 = styled.h5`
     color: ${yellowCustom};
   }
 `;
+
+export const H6 = styled.h6`
+  position: relative;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  padding-bottom: 4px;
+  margin-top: 0;
+
+  strong {
+    color: ${yellowCustom};
+  }
+`;
