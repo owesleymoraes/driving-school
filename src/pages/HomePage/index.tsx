@@ -50,12 +50,26 @@ export const HomePage: React.FC = () => {
       </Sections>
       <Sections inverse>
         <Title tagOfTitle="h2" description={"Conheça nossos serviços"}></Title>
-        <Card
-          nameImg={walletCarMotor as any}
-          title="1ª Habilitação carro e moto"
-          description="Melhor preço para o combinado carro e moto."
-          onClick={() => {}}
-        />
+        <Styled.WrapperCard>
+          <Card
+            nameImg={walletCarMotor as any}
+            title="1ª Habilitação Carro e Moto"
+            description="Melhor preço para habitação carro e moto."
+            onClick={() => {}}
+          />
+          <Card
+            nameImg={walletCar as any}
+            title="1ª Habilitação Carro"
+            description="Melhor preço para habilitação de carro."
+            onClick={() => {}}
+          />
+          <Card
+            nameImg={walletMotor as any}
+            title="1ª Habilitação Moto"
+            description="Melhor preço para habilitação de moto."
+            onClick={() => {}}
+          />
+        </Styled.WrapperCard>
       </Sections>
 
       <Styled.SectionAbout>

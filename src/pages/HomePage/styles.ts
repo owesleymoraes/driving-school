@@ -30,3 +30,14 @@ export const ContainerVideo = styled.div`
     position: absolute;
   }
 `;
+
+export const WrapperCard = styled.div`
+display: flex;
+justify-content: space-between;
+
+@media (max-width: 735px) {
+  flex-direction: column;
+  
+}
+
+`

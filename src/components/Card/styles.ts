@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const ContainerCard = styled.div`
+export const BodyCard = styled.div`
+padding: 16px;
+`
+
+export const WrapperCard = styled.div`
   display: flex;
   max-width: 360px;
   width: 320px;
