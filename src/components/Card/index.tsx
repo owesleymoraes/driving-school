@@ -19,25 +19,27 @@ export const Card: React.FC<CardProps> = ({
   onClick,
 }) => {
   return (
-    <Styled.ContainerCard>
-      <Styled.Image src={nameImg} alt="Not found img" />
-      <Styled.TitleCard>
-        <Title tagOfTitle="h6" description={title} />
-      </Styled.TitleCard>
-      <Styled.DescriptionCard>{description}</Styled.DescriptionCard>
-      <Styled.ButtonCard>
-        <Button
-          color="#ffc107"
-          borderRadius={8}
-          width={100}
-          height={32}
-          fontSize={12}
-          backgroundColor="transparent"
-          onClick={() => onClick}
-        >
-          Saiba mais
-        </Button>
-      </Styled.ButtonCard>
-    </Styled.ContainerCard>
+    <Styled.BodyCard>
+      <Styled.WrapperCard>
+        <Styled.Image src={nameImg} alt="Not found img" />
+        <Styled.TitleCard>
+          <Title tagOfTitle="h6" description={title} />
+        </Styled.TitleCard>
+        <Styled.DescriptionCard>{description}</Styled.DescriptionCard>
+        <Styled.ButtonCard>
+          <Button
+            color="#ffc107"
+            borderRadius={8}
+            width={100}
+            height={32}
+            fontSize={12}
+            backgroundColor="transparent"
+            onClick={() => onClick}
+          >
+            Saiba mais
+          </Button>
+        </Styled.ButtonCard>
+      </Styled.WrapperCard>
+    </Styled.BodyCard>
   );
 };
