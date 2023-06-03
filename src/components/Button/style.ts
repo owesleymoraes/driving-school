@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
-export const ButtonColors = {
-  danger: "danger",
-  default: "default",
-  primary: "primary",
-};
+// export const ButtonColors = {
+//   danger: "danger",
+//   default: "default",
+//   primary: "primary",
+// };
 
-export const ButtonVariants = {
-  link: "link",
-  default: "default",
-  outlined: "outlined",
-};
+// export const ButtonVariants = {
+//   link: "link",
+//   default: "default",
+//   outlined: "outlined",
+// };
 
 export const ButtonContainer = styled.div``;
 
@@ -23,6 +23,7 @@ export const Button = styled.button`
   cursor: pointer;
   border: 1px solid #ffc107;
   align-items: center;
+  justify-content: center;
 
   &:hover:enabled {
     opacity: 0.6;
