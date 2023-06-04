@@ -50,3 +50,7 @@ export const ContainerCard = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+
+export const TitleDoubts = styled.div`
+margin-bottom: 24px;
+`

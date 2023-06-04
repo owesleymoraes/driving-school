@@ -16,6 +16,7 @@ import walletCarMotor from "../../assets/wallet-car-moto.jpg";
 import { FaAccessibleIcon, FaCar, FaKey, FaMapMarkerAlt } from "react-icons/fa";
 
 import * as Styled from "./styles";
+import { Accordion } from "../../components/Accordion";
 
 export const HomePage: React.FC = () => {
   const itemList = ["item 1", "item 2", "item 3", "item 4", "item 5"];
@@ -98,10 +99,10 @@ export const HomePage: React.FC = () => {
               onClick={() => {}}
             />
             <Card
-             nameImg={truck as any}
-             title="Categoria D ( Caminhão )"
-             description="Melhor preço para habilitação categoria D."
-             onClick={() => {}}
+              nameImg={truck as any}
+              title="Categoria D ( Caminhão )"
+              description="Melhor preço para habilitação categoria D."
+              onClick={() => {}}
             />
           </Styled.WrapperCard>
           <Button
@@ -135,7 +136,21 @@ export const HomePage: React.FC = () => {
       </Styled.SectionAbout>
 
       <Sections inverse>
-        <Title tagOfTitle="h2" description={"Dúvidas recorrentes"}></Title>
+        <Styled.TitleDoubts>
+        <Title tagOfTitle="h2" description={"Dúvidas recorrentes"} />
+        </Styled.TitleDoubts>
+        <Accordion title="Como eu renovo minha CNH ?">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+          doloribus. Quasi quisquam harum ullam.
+        </Accordion>
+        <Accordion title="Como faço mudança de categoria ?">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+          doloribus. Quasi quisquam harum ullam.
+        </Accordion>
+        <Accordion title="Fui multado e agora ?">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+          doloribus. Quasi quisquam harum ullam.
+        </Accordion>
       </Sections>
       <Footer />
     </>
