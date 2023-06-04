@@ -14,7 +14,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const DefaultFooter: React.FC = () => {
+export const DefaultCard: React.FC = () => {
   return (
     <Card
       nameImg={walletCarMotor as any}
