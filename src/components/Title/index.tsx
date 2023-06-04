@@ -5,9 +5,14 @@ import { BottomBar } from "../BottomBar";
 interface TitleProps {
   description: React.ReactElement | string;
   tagOfTitle?: string;
+  withBottomBar?: boolean;
 }
 
-export const Title: React.FC<TitleProps> = ({ description, tagOfTitle }) => {
+export const Title: React.FC<TitleProps> = ({
+  description,
+  tagOfTitle,
+  withBottomBar = true,
+}) => {
   const getTypeTitle = (tagSize: string) => {
     switch (tagSize) {
       case "h1":
@@ -38,7 +43,7 @@ export const Title: React.FC<TitleProps> = ({ description, tagOfTitle }) => {
   return (
     <>
       <HeadingComponent>{description}</HeadingComponent>
-      <BottomBar colorBar="orange" />
+      {withBottomBar && <BottomBar colorBar="orange" />}
     </>
   );
 };
