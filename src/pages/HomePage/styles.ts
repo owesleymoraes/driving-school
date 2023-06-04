@@ -31,13 +31,26 @@ export const ContainerVideo = styled.div`
   }
 `;
 
-export const WrapperCard = styled.div`
-display: flex;
-justify-content: space-between;
+export const WrapperCard = styled.div<{ openAccordion: boolean }>`
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: space-around;
+  margin-bottom: 32px;
+  height: ${(props) => (props.openAccordion ? "780px" : "390px")};
+  transition: height ${(props) => (props.openAccordion ? "1s" : ".5s")} ease;
 
-@media (max-width: 735px) {
+  @media (max-width: 735px) {
+    flex-direction: column;
+  }
+`;
+
+export const ContainerCard = styled.div`
+  display: flex;
   flex-direction: column;
-  
-}
+  align-items: center;
+`;
 
+export const TitleDoubts = styled.div`
+margin-bottom: 24px;
 `

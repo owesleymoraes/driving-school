@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import bus from "../../assets/bus.jpg";
+import truck from "../../assets/truck.jpg";
 import { Grid } from "../../components/Grid";
 import { Card } from "../../components/Card";
 import { Title } from "../../components/Title";
@@ -14,9 +16,27 @@ import walletCarMotor from "../../assets/wallet-car-moto.jpg";
 import { FaAccessibleIcon, FaCar, FaKey, FaMapMarkerAlt } from "react-icons/fa";
 
 import * as Styled from "./styles";
+import { Accordion } from "../../components/Accordion";
 
 export const HomePage: React.FC = () => {
   const itemList = ["item 1", "item 2", "item 3", "item 4", "item 5"];
+
+  const [hiddenAccordion, setHiddenAccordion] = useState(false);
+
+  const handleClickMoreServices = () => {
+    setHiddenAccordion(!hiddenAccordion);
+
+    const targetElement = document.getElementById("#initial-accordion");
+
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    }
+  };
+
   return (
     <>
       <Header>{itemList}</Header>
@@ -49,27 +69,52 @@ export const HomePage: React.FC = () => {
         </Grid>
       </Sections>
       <Sections inverse>
-        <Title tagOfTitle="h2" description={"Conheça nossos serviços"}></Title>
-        <Styled.WrapperCard>
-          <Card
-            nameImg={walletCarMotor as any}
-            title="1ª Habilitação Carro e Moto"
-            description="Melhor preço para habitação carro e moto."
-            onClick={() => {}}
-          />
-          <Card
-            nameImg={walletCar as any}
-            title="1ª Habilitação Carro"
-            description="Melhor preço para habilitação de carro."
-            onClick={() => {}}
-          />
-          <Card
-            nameImg={walletMotor as any}
-            title="1ª Habilitação Moto"
-            description="Melhor preço para habilitação de moto."
-            onClick={() => {}}
-          />
-        </Styled.WrapperCard>
+        <div id="#initial-accordion">
+          <Title tagOfTitle="h2" description={"Conheça nossos serviços"} />
+        </div>
+        <Styled.ContainerCard>
+          <Styled.WrapperCard openAccordion={hiddenAccordion}>
+            <Card
+              nameImg={walletCarMotor as any}
+              title="1ª Habilitação Carro e Moto"
+              description="Melhor preço para habitação carro e moto."
+              onClick={() => {}}
+            />
+            <Card
+              nameImg={walletCar as any}
+              title="1ª Habilitação Carro"
+              description="Melhor preço para habilitação de carro."
+              onClick={() => {}}
+            />
+            <Card
+              nameImg={walletMotor as any}
+              title="1ª Habilitação Moto"
+              description="Melhor preço para habilitação de moto."
+              onClick={() => {}}
+            />
+            <Card
+              nameImg={bus as any}
+              title="Categoria D ( Ônibus )"
+              description="Melhor preço para habilitação categoria D."
+              onClick={() => {}}
+            />
+            <Card
+              nameImg={truck as any}
+              title="Categoria D ( Caminhão )"
+              description="Melhor preço para habilitação categoria D."
+              onClick={() => {}}
+            />
+          </Styled.WrapperCard>
+          <Button
+            borderRadius={8}
+            width={200}
+            height={32}
+            fontSize={16}
+            onClick={() => handleClickMoreServices()}
+          >
+            Mais serviços
+          </Button>
+        </Styled.ContainerCard>
       </Sections>
 
       <Styled.SectionAbout>
@@ -91,7 +136,21 @@ export const HomePage: React.FC = () => {
       </Styled.SectionAbout>
 
       <Sections inverse>
-        <Title tagOfTitle="h2" description={"Dúvidas recorrentes"}></Title>
+        <Styled.TitleDoubts>
+        <Title tagOfTitle="h2" description={"Dúvidas recorrentes"} />
+        </Styled.TitleDoubts>
+        <Accordion title="Como eu renovo minha CNH ?">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+          doloribus. Quasi quisquam harum ullam.
+        </Accordion>
+        <Accordion title="Como faço mudança de categoria ?">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+          doloribus. Quasi quisquam harum ullam.
+        </Accordion>
+        <Accordion title="Fui multado e agora ?">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+          doloribus. Quasi quisquam harum ullam.
+        </Accordion>
       </Sections>
       <Footer />
     </>
