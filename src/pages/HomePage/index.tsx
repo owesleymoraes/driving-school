@@ -25,7 +25,10 @@ export const HomePage: React.FC = () => {
 
   const handleClickMoreServices = () => {
     setHiddenAccordion(!hiddenAccordion);
+  };
 
+  // função que chama o elemento por âncora
+  const handleClickAccordion = () => {
     const targetElement = document.getElementById("#initial-accordion");
 
     if (targetElement) {
@@ -69,9 +72,7 @@ export const HomePage: React.FC = () => {
         </Grid>
       </Sections>
       <Sections inverse>
-        <div id="#initial-accordion">
-          <Title tagOfTitle="h2" description={"Conheça nossos serviços"} />
-        </div>
+        <Title tagOfTitle="h2" description={"Conheça nossos serviços"} />
         <Styled.ContainerCard>
           <Styled.WrapperCard openAccordion={hiddenAccordion}>
             <Card
@@ -137,7 +138,9 @@ export const HomePage: React.FC = () => {
 
       <Sections inverse>
         <Styled.TitleDoubts>
-          <Title tagOfTitle="h2" description={"Dúvidas recorrentes"} />
+          <div id="#initial-accordion">
+            <Title tagOfTitle="h2" description={"Dúvidas recorrentes"} />
+          </div>
         </Styled.TitleDoubts>
         <AccordionGroup />
       </Sections>
