@@ -21,3 +21,8 @@ export const DefaultAccordion: React.FC = () => {
     </Accordion>
   );
 };
+export const GroupAccordion: React.FC = () => {
+  return (
+   <GroupAccordion />
+  );
+};

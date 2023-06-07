@@ -13,10 +13,10 @@ import { Feature } from "../../components/Features";
 import { Sections } from "../../components/Sections";
 import walletMotor from "../../assets/wallet-moto.jpg";
 import walletCarMotor from "../../assets/wallet-car-moto.jpg";
+import { AccordionGroup } from "../../components/AccourdionGroup";
 import { FaAccessibleIcon, FaCar, FaKey, FaMapMarkerAlt } from "react-icons/fa";
 
 import * as Styled from "./styles";
-import { Accordion } from "../../components/Accordion";
 
 export const HomePage: React.FC = () => {
   const itemList = ["item 1", "item 2", "item 3", "item 4", "item 5"];
@@ -25,7 +25,10 @@ export const HomePage: React.FC = () => {
 
   const handleClickMoreServices = () => {
     setHiddenAccordion(!hiddenAccordion);
+  };
 
+  // função que chama o elemento por âncora
+  const handleClickAccordion = () => {
     const targetElement = document.getElementById("#initial-accordion");
 
     if (targetElement) {
@@ -69,9 +72,7 @@ export const HomePage: React.FC = () => {
         </Grid>
       </Sections>
       <Sections inverse>
-        <div id="#initial-accordion">
-          <Title tagOfTitle="h2" description={"Conheça nossos serviços"} />
-        </div>
+        <Title tagOfTitle="h2" description={"Conheça nossos serviços"} />
         <Styled.ContainerCard>
           <Styled.WrapperCard openAccordion={hiddenAccordion}>
             <Card
@@ -137,20 +138,11 @@ export const HomePage: React.FC = () => {
 
       <Sections inverse>
         <Styled.TitleDoubts>
-        <Title tagOfTitle="h2" description={"Dúvidas recorrentes"} />
+          <div id="#initial-accordion">
+            <Title tagOfTitle="h2" description={"Dúvidas recorrentes"} />
+          </div>
         </Styled.TitleDoubts>
-        <Accordion title="Como eu renovo minha CNH ?">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
-          doloribus. Quasi quisquam harum ullam.
-        </Accordion>
-        <Accordion title="Como faço mudança de categoria ?">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
-          doloribus. Quasi quisquam harum ullam.
-        </Accordion>
-        <Accordion title="Fui multado e agora ?">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
-          doloribus. Quasi quisquam harum ullam.
-        </Accordion>
+        <AccordionGroup />
       </Sections>
       <Footer />
     </>

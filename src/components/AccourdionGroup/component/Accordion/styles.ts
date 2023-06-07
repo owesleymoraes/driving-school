@@ -7,6 +7,10 @@ export const Root = styled.div<{ isOpen: boolean }>`
   background-color: #ffff;
   height: ${(props) => (props.isOpen ? "5.37rem" : "4.37rem")};
   transition: height ${(props) => (props.isOpen ? ".5s" : ".5s")} ease;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
 
 export const WrapperHeader = styled.div`
