@@ -1,6 +1,8 @@
 import React, { Children, useState } from "react";
 import { Accordion } from "../Accordion";
 
+import * as Styled from "./styles";
+
 interface AccordionGroupProps {
   informationAccordion: accordionItems[];
 }
@@ -30,7 +32,7 @@ export const AccordionGroup: React.FC<AccordionGroupProps> = ({
   };
 
   return (
-    <>
+    <Styled.Root>
       {Children.map(itemsAccordion, (item, index) => {
         if (React.isValidElement(item)) {
           return React.cloneElement(item, {
@@ -39,6 +41,6 @@ export const AccordionGroup: React.FC<AccordionGroupProps> = ({
           } as React.Attributes);
         }
       })}
-    </>
+    </Styled.Root>
   );
 };
