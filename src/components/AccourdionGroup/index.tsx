@@ -1,22 +1,30 @@
 import React, { Children, useState } from "react";
-import { Accordion } from "./component/Accordion";
+import { Accordion } from "../Accordion";
 
-export const AccordionGroup: React.FC = () => {
+import * as Styled from "./styles";
+
+interface AccordionGroupProps {
+  informationAccordion: accordionItems[];
+}
+
+export type accordionItems = {
+  titleAccordion: string;
+  descriptionAccordion: string;
+};
+
+export const AccordionGroup: React.FC<AccordionGroupProps> = ({
+  informationAccordion,
+}) => {
   const [indexItemClicked, setIndexItemClicked] = useState(-1);
 
   const itemsAccordion = [
-    <Accordion isComponentControlled title="Como eu renovo minha CNH ?">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
-      doloribus. Quasi quisquam harum ullam.
-    </Accordion>,
-    <Accordion isComponentControlled title="Como faço mudança de categoria ?">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
-      doloribus. Quasi quisquam harum ullam.
-    </Accordion>,
-    <Accordion isComponentControlled title="Fui multado e agora ?">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
-      doloribus. Quasi quisquam harum ullam.
-    </Accordion>,
+    informationAccordion.map((item, index) => {
+      return (
+        <Accordion key={index} title={item.titleAccordion} onlyOneOpenItem>
+          {item.descriptionAccordion}
+        </Accordion>
+      );
+    }),
   ];
 
   const handleAccordionClick = (index: number) => {
@@ -24,7 +32,7 @@ export const AccordionGroup: React.FC = () => {
   };
 
   return (
-    <>
+    <Styled.Root>
       {Children.map(itemsAccordion, (item, index) => {
         if (React.isValidElement(item)) {
           return React.cloneElement(item, {
@@ -33,6 +41,6 @@ export const AccordionGroup: React.FC = () => {
           } as React.Attributes);
         }
       })}
-    </>
+    </Styled.Root>
   );
 };

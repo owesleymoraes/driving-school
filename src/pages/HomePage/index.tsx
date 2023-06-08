@@ -13,13 +13,33 @@ import { Feature } from "../../components/Features";
 import { Sections } from "../../components/Sections";
 import walletMotor from "../../assets/wallet-moto.jpg";
 import walletCarMotor from "../../assets/wallet-car-moto.jpg";
-import { AccordionGroup } from "../../components/AccourdionGroup";
+import {
+  AccordionGroup,
+  accordionItems,
+} from "../../components/AccourdionGroup";
 import { FaAccessibleIcon, FaCar, FaKey, FaMapMarkerAlt } from "react-icons/fa";
 
 import * as Styled from "./styles";
 
 export const HomePage: React.FC = () => {
   const itemList = ["item 1", "item 2", "item 3", "item 4", "item 5"];
+  const itemsAccordion: accordionItems[] = [
+    {
+      titleAccordion: "Como eu renovo minha CNH ?",
+      descriptionAccordion:
+        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,doloribus. Quasi quisquam harum ullam.",
+    },
+    {
+      titleAccordion: "Como faço mudança de categoria",
+      descriptionAccordion:
+        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,doloribus. Quasi quisquam harum ullam.",
+    },
+    {
+      titleAccordion: "Fui multado e agora ?",
+      descriptionAccordion:
+        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,doloribus. Quasi quisquam harum ullam.",
+    },
+  ];
 
   const [hiddenAccordion, setHiddenAccordion] = useState(false);
 
@@ -142,7 +162,7 @@ export const HomePage: React.FC = () => {
             <Title tagOfTitle="h2" description={"Dúvidas recorrentes"} />
           </div>
         </Styled.TitleDoubts>
-        <AccordionGroup />
+        <AccordionGroup informationAccordion={itemsAccordion} />
       </Sections>
       <Footer />
     </>

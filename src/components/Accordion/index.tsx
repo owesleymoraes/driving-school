@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Title } from "../../../Title";
+import { Title } from "../Title";
 import { MdExpandMore, MdExpandLess } from "react-icons/md";
 
 import * as Styled from "./styles";
@@ -7,8 +7,9 @@ import * as Styled from "./styles";
 interface AccordionProps {
   title: string;
   controlOpen?: boolean;
-  isComponentControlled?: boolean;
+  onlyOneOpenItem?: boolean;
   children?: React.ReactNode | React.ReactNode[];
+  
   onClickSelectedItemAccordion?: () => void;
 }
 
@@ -16,17 +17,17 @@ export const Accordion: React.FC<AccordionProps> = ({
   title,
   children,
   controlOpen,
-  isComponentControlled = false,
+  onlyOneOpenItem = false,
   onClickSelectedItemAccordion,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const isControlled = isComponentControlled ? controlOpen : isOpen;
+  const isControlled = onlyOneOpenItem ? controlOpen : isOpen;
   const open = isControlled;
 
   const handleClickAccordion = () => {
     const newState = !open;
-    if (isComponentControlled) {
+    if (onlyOneOpenItem) {
       onClickSelectedItemAccordion && onClickSelectedItemAccordion();
     } else {
       setIsOpen(newState);
