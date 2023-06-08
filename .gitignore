@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+#product
+/build
+/storybook-static
+build-storybook.log
