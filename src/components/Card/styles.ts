@@ -10,6 +10,7 @@ export const WrapperCard = styled.div`
   width: 320px;
   flex-direction: column;
   border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
   background-color: #ffff;
 `;
 
