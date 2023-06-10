@@ -152,7 +152,7 @@ export const HomePage: React.FC = () => {
           </Button>
         </Sections>
         <Styled.ContainerVideo>
-          <video src={trafficCar} width="100%" autoPlay loop />
+          <video src={trafficCar} width="100%" autoPlay loop muted/>
         </Styled.ContainerVideo>
       </Styled.SectionAbout>
 

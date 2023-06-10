@@ -24,6 +24,7 @@ export const ContainerVideo = styled.div`
   left: 50%;
   width: 500px;
   margin-top: 48px;
+  margin-bottom: 60px;
 
   @media (min-width: 1200px) {
     display: flex;
