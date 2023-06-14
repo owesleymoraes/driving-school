@@ -62,7 +62,13 @@ export const HomePage: React.FC = () => {
 
   return (
     <>
-      <Header>{itemList}</Header>
+      <Header
+        titlePrincipal="Ganhe sua"
+        titlePrimary="Liberdade"
+        titleSecondary="para ir e vim"
+      >
+        {itemList}
+      </Header>
       <Sections>
         <Grid>
           <Feature icon={<FaCar />} title="Maior e melhor frota">
@@ -152,7 +158,7 @@ export const HomePage: React.FC = () => {
           </Button>
         </Sections>
         <Styled.ContainerVideo>
-          <video src={trafficCar} width="100%" autoPlay loop muted/>
+          <video src={trafficCar} width="100%" autoPlay loop muted />
         </Styled.ContainerVideo>
       </Styled.SectionAbout>
 
