@@ -13,6 +13,7 @@ import { Feature } from "../../components/Features";
 import { Sections } from "../../components/Sections";
 import walletMotor from "../../assets/wallet-moto.jpg";
 import walletCarMotor from "../../assets/wallet-car-moto.jpg";
+import imagePrincipal from "../../assets/car.jpg";
 import {
   AccordionGroup,
   accordionItems,
@@ -63,9 +64,12 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <Header
+        imageBackground={imagePrincipal}
         titlePrincipal="Ganhe sua"
         titlePrimary="Liberdade"
         titleSecondary="para ir e vim"
+        hasButton
+        nameButton="MATRICULE-SE AGORA"
       >
         {itemList}
       </Header>
