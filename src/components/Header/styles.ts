@@ -3,10 +3,10 @@ import img from "../../assets/car.jpg";
 
 const yellowCustom = "#ffc107";
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.div<{ image: any }>`
   color: #fff;
   padding: 100px 0;
-  background: url(${img}), rgba(0, 0, 0, 0.4);
+  background: url(${(props) => props.image}), rgba(0, 0, 0, 0.4);
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;

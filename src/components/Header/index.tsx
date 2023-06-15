@@ -10,16 +10,22 @@ interface HeaderProps {
   titlePrincipal?: string;
   titlePrimary?: string;
   titleSecondary?: string;
+  hasButton?: boolean;
+  nameButton?: string;
+  imageBackground?: React.ReactNode | React.ReactNode[];
 }
 
 export const Header: React.FC<HeaderProps> = ({
   children,
-  titlePrincipal,
+  nameButton = "",
   titlePrimary,
   titleSecondary,
+  titlePrincipal,
+  hasButton = false,
+  imageBackground
 }) => {
   return (
-    <Styled.HeaderContainer>
+    <Styled.HeaderContainer image = {imageBackground}>
       <Container>
         <Title
           description={
@@ -41,14 +47,16 @@ export const Header: React.FC<HeaderProps> = ({
               })}
           </Styled.InfoHeaderContainer>
         </Styled.InfoHeaderContainer>
-        <Button
-          width={240}
-          borderRadius={8}
-          backgroundColor="#ffc107"
-          onClick={() => {}}
-        >
-          MATRICULE-SE AGORA
-        </Button>
+        {hasButton && (
+          <Button
+            width={240}
+            borderRadius={8}
+            backgroundColor="#ffc107"
+            onClick={() => {}}
+          >
+            {nameButton}
+          </Button>
+        )}
       </Container>
     </Styled.HeaderContainer>
   );
