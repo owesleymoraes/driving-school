@@ -4,6 +4,8 @@ import { Header } from "../../components/Header";
 import road from "../../assets/road.jpg";
 import { Sections } from "../../components/Sections";
 import { Grid } from "../../components/Grid";
+import about from "../../../svg/about.svg";
+import { AboutSvg } from "../../components/ImageSvg";
 
 export const About: React.FC = () => {
   return (
@@ -45,6 +47,10 @@ export const About: React.FC = () => {
               eligendi animi ex modi accusamus consequatur ipsum eius, dolorum
               cum cumque, nostrum aspernatur.
             </p>
+
+            <Styled.Image>
+              <AboutSvg width={38} height={"auto"} />
+            </Styled.Image>
           </div>
         </Grid>
       </Sections>
