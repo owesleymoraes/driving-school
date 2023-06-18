@@ -1,19 +1,33 @@
 import React from "react";
-import * as Styled from "./styles";
-import { Header } from "../../components/Header";
 import road from "../../assets/road.jpg";
-import { Sections } from "../../components/Sections";
+import tobi from "../../assets/tobi.jpg";
+import naruto from "../../assets/naruto.jpg";
+import { Card } from "../../components/Card";
 import { Grid } from "../../components/Grid";
-import about from "../../../svg/about.svg";
+import sasori from "../../assets/sasori.jpg";
+import { Title } from "../../components/Title";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
+import { Sections } from "../../components/Sections";
 import { AboutSvg } from "../../components/ImageSvg";
+import orochimaru from "../../assets/orochimaru.jpg";
+
+import * as Styled from "./styles";
 
 export const About: React.FC = () => {
+  const teachers = [
+    { image: naruto, name: "Naruto" },
+    { image: sasori, name: "Sasori" },
+    { image: tobi, name: "Tobi" },
+    { image: orochimaru, name: "Orochimaru" },
+  ];
+
   return (
     <Styled.ContainerAbout>
       <Header imageBackground={road} titlePrincipal="Auto Escola Moraes" />
       <Sections>
         <Grid>
-          <div>
+          <Styled.ContainerColumn>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
               deserunt labore rem repudiandae. Provident distinctio minus esse
@@ -39,8 +53,8 @@ export const About: React.FC = () => {
               <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
               <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
             </ul>
-          </div>
-          <div>
+          </Styled.ContainerColumn>
+          <Styled.ContainerColumn>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
               laudantium itaque fuga qui error. Quos impedit temporibus,
@@ -49,11 +63,44 @@ export const About: React.FC = () => {
             </p>
 
             <Styled.Image>
-              <AboutSvg width={38} height={"auto"} />
+              <AboutSvg />
             </Styled.Image>
-          </div>
+          </Styled.ContainerColumn>
         </Grid>
       </Sections>
+      <Sections inverse>
+        <Grid>
+          <Styled.ContainerColumn>
+            <h4>Missão</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+              corrupti hic accusantium, est, a alias harum dicta, culpa
+              repudiandae vitae autem voluptatibus! Pariatur ea dolore animi
+              assumenda cumque tenetur optio?
+            </p>
+          </Styled.ContainerColumn>
+          <Styled.ContainerColumn>
+            <h4>Visão</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+              corrupti hic accusantium, est, a alias harum dicta, culpa
+              repudiandae vitae autem voluptatibus! Pariatur ea dolore animi
+              assumenda cumque tenetur optio?
+            </p>
+          </Styled.ContainerColumn>
+        </Grid>
+      </Sections>
+      <Sections>
+        <Title tagOfTitle="h2" description={"Conheça nossos Professores"} />
+        <Styled.WrapperCard>
+          {teachers.map((item, index) => {
+            return (
+              <Card key={index} nameImg={item.image} descriptionImage={item.name} />
+            );
+          })}
+        </Styled.WrapperCard>
+      </Sections>
+      <Footer />
     </Styled.ContainerAbout>
   );
 };
