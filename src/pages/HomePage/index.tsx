@@ -106,19 +106,19 @@ export const HomePage: React.FC = () => {
         <Styled.ContainerCard>
           <Styled.WrapperCard openAccordion={hiddenAccordion}>
             <Card
-              nameImg={walletCarMotor as any}
+              nameImg={walletCarMotor}
               title="1ª Habilitação Carro e Moto"
               description="Melhor preço para habitação carro e moto."
               onClick={() => {}}
             />
             <Card
-              nameImg={walletCar as any}
+              nameImg={walletCar }
               title="1ª Habilitação Carro"
               description="Melhor preço para habilitação de carro."
               onClick={() => {}}
             />
             <Card
-              nameImg={walletMotor as any}
+              nameImg={walletMotor }
               title="1ª Habilitação Moto"
               description="Melhor preço para habilitação de moto."
               onClick={() => {}}
