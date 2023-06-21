@@ -9,8 +9,8 @@ import { Title } from "../../components/Title";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Sections } from "../../components/Sections";
-import { AboutSvg } from "../../components/ImageSvg";
 import orochimaru from "../../assets/orochimaru.jpg";
+import { AboutSvg } from "../../components/ImageSvg/About";
 
 import * as Styled from "./styles";
 
