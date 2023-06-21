@@ -1,7 +1,8 @@
 import React from "react";
 import * as Styled from "./styles";
-import { Button } from "../Button";
-import { Callout } from "../Callout";
+import { Button } from "../../../Button";
+import { Callout } from "../..";
+import { CalloutMedia } from "../CalloutMedia";
 
 interface CalloutBodyProps {
   nameButton?: string;
@@ -17,8 +18,13 @@ export const CalloutBody: React.FC<CalloutBodyProps> = ({
   return (
     <Callout>
       <Styled.ContainerCalloutBody>
-        <h6>{title}</h6>
-        <p>{paragraph}</p>
+        <div>
+          <h6>{title}</h6>
+          <p>{paragraph}</p>
+        </div>
+        <Styled.ContainerCalloutMedia>
+          <CalloutMedia />
+        </Styled.ContainerCalloutMedia>
       </Styled.ContainerCalloutBody>
       {nameButton && (
         <Styled.WrapperButton>
