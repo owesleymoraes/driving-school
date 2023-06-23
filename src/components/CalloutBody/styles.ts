@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BreakPointSize, screenBreakPoint } from "../../../../BreakPointSize";
+import { BreakPointSize, screenBreakPoint } from "../../BreakPointSize";
 
 export const ContainerCalloutBody = styled.div`
   display: flex;

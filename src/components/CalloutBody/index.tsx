@@ -1,8 +1,8 @@
 import React from "react";
 import * as Styled from "./styles";
-import { Button } from "../../../Button";
-import { Callout } from "../..";
-import { CalloutMedia } from "../CalloutMedia";
+import { Button } from "../Button";
+import { Callout } from "./components/Callout";
+import { CalloutMedia } from "./components/CalloutMedia";
 
 interface CalloutBodyProps {
   nameButton?: string;
