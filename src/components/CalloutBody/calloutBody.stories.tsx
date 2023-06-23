@@ -1,7 +1,7 @@
 import React from "react";
 import { CalloutBody } from ".";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Callout } from "../..";
+import { Callout } from "./components/Callout";
 
 const meta = {
   title: "CalloutBody",
@@ -16,15 +16,13 @@ type Story = StoryObj<typeof meta>;
 
 export const DefaultCalloutBody: React.FC = () => {
   return (
-    <Callout>
-      <CalloutBody
-        nameButton="Matricular"
-        title="Faça Sua matrícula agora mesmo"
-        paragraph="  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
+    <CalloutBody
+      nameButton="Matricular"
+      title="Faça Sua matrícula agora mesmo"
+      paragraph="  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
           doloremque molestias aspernatur architecto ducimus impedit nemo
           consequuntur minima delectus repudiandae, numquam repellat tempore
           commodi dicta. Praesentium voluptatibus esse commodi aperiam?"
-      />
-    </Callout>
+    />
   );
 };
