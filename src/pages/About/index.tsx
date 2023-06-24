@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import road from "../../assets/road.jpg";
 import tobi from "../../assets/tobi.jpg";
 import naruto from "../../assets/naruto.jpg";
@@ -6,6 +6,7 @@ import { Card } from "../../components/Card";
 import { Grid } from "../../components/Grid";
 import sasori from "../../assets/sasori.jpg";
 import { Title } from "../../components/Title";
+import { useNavigate } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Sections } from "../../components/Sections";
@@ -15,6 +16,7 @@ import { AboutSvg } from "../../components/ImageSvg/About";
 import * as Styled from "./styles";
 
 export const About: React.FC = () => {
+  const navigate = useNavigate();
   const teachers = [
     { image: naruto, name: "Naruto" },
     { image: sasori, name: "Sasori" },
@@ -22,9 +24,26 @@ export const About: React.FC = () => {
     { image: orochimaru, name: "Orochimaru" },
   ];
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+    });
+  }, []);
+
+  const handleClickGoBack = () => {
+    navigate("/");
+  };
+
   return (
     <Styled.ContainerAbout>
-      <Header imageBackground={road} titlePrincipal="Auto Escola Moraes" />
+      <Header
+        imageBackground={road}
+        titlePrincipal="Auto Escola Moraes"
+        hasButton
+        nameButton="Voltar"
+        onClickButton={handleClickGoBack}
+      />
       <Sections>
         <Grid>
           <Styled.ContainerColumn>
@@ -95,7 +114,11 @@ export const About: React.FC = () => {
         <Styled.WrapperCard>
           {teachers.map((item, index) => {
             return (
-              <Card key={index} nameImg={item.image} descriptionImage={item.name} />
+              <Card
+                key={index}
+                nameImg={item.image}
+                descriptionImage={item.name}
+              />
             );
           })}
         </Styled.WrapperCard>

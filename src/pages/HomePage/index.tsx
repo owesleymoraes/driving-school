@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import bus from "../../assets/bus.jpg";
+import { useNavigate } from "react-router-dom";
 import truck from "../../assets/truck.jpg";
 import { Grid } from "../../components/Grid";
 import { Card } from "../../components/Card";
@@ -8,12 +9,12 @@ import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
 import { Footer } from "../../components/Footer";
 import trafficCar from "../../assets/traffic.mp4";
+import imagePrincipal from "../../assets/car.jpg";
 import walletCar from "../../assets/wallet-car.jpg";
 import { Feature } from "../../components/Features";
 import { Sections } from "../../components/Sections";
 import walletMotor from "../../assets/wallet-moto.jpg";
 import walletCarMotor from "../../assets/wallet-car-moto.jpg";
-import imagePrincipal from "../../assets/car.jpg";
 import {
   AccordionGroup,
   accordionItems,
@@ -23,6 +24,7 @@ import { FaAccessibleIcon, FaCar, FaKey, FaMapMarkerAlt } from "react-icons/fa";
 import * as Styled from "./styles";
 
 export const HomePage: React.FC = () => {
+  const navigate = useNavigate();
   const itemList = ["item 1", "item 2", "item 3", "item 4", "item 5"];
   const itemsAccordion: accordionItems[] = [
     {
@@ -61,6 +63,10 @@ export const HomePage: React.FC = () => {
     }
   };
 
+  const handleClickAbout = () => {
+    navigate("/about");
+  };
+
   return (
     <>
       <Header
@@ -70,6 +76,7 @@ export const HomePage: React.FC = () => {
         titleSecondary="para ir e vim"
         hasButton
         nameButton="MATRICULE-SE AGORA"
+        onClickButton={() => {}}
       >
         {itemList}
       </Header>
@@ -112,13 +119,13 @@ export const HomePage: React.FC = () => {
               onClick={() => {}}
             />
             <Card
-              nameImg={walletCar }
+              nameImg={walletCar}
               title="1ª Habilitação Carro"
               description="Melhor preço para habilitação de carro."
               onClick={() => {}}
             />
             <Card
-              nameImg={walletMotor }
+              nameImg={walletMotor}
               title="1ª Habilitação Moto"
               description="Melhor preço para habilitação de moto."
               onClick={() => {}}
@@ -157,7 +164,7 @@ export const HomePage: React.FC = () => {
             ipsum dolor sit amet, consectetur adipisicing elit. Sequi quod
             similique aperiam amet quaerat error repudiandae dolorum.
           </Styled.InformationText>
-          <Button height={14} fontSize={12} onClick={() => {}}>
+          <Button height={14} fontSize={12} onClick={() => handleClickAbout()}>
             Saiba mais
           </Button>
         </Sections>
