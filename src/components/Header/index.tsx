@@ -7,12 +7,13 @@ import * as Styled from "./styles";
 
 interface HeaderProps {
   children?: string[];
-  titlePrincipal?: string;
-  titlePrimary?: string;
-  titleSecondary?: string;
   hasButton?: boolean;
   nameButton?: string;
+  titlePrimary?: string;
+  titlePrincipal?: string;
+  titleSecondary?: string;
   imageBackground?: React.ReactNode | React.ReactNode[];
+  onClickButton: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -22,10 +23,14 @@ export const Header: React.FC<HeaderProps> = ({
   titleSecondary,
   titlePrincipal,
   hasButton = false,
-  imageBackground
+  imageBackground,
+  onClickButton,
 }) => {
+
+
+  
   return (
-    <Styled.HeaderContainer image = {imageBackground}>
+    <Styled.HeaderContainer image={imageBackground}>
       <Container>
         <Title
           description={
@@ -52,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({
             width={240}
             borderRadius={8}
             backgroundColor="#ffc107"
-            onClick={() => {}}
+            onClick={() => onClickButton()}
           >
             {nameButton}
           </Button>
