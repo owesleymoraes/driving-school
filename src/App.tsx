@@ -1,15 +1,13 @@
 import React from "react";
-import { HomePage } from "./pages/HomePage";
+import { AppRoute } from "./_app-route";
 import GlobalStyle from "./styles/GlobalStyle";
 import { ThemeProvider } from "./styles/ThemeProvider";
-import { About } from "./pages/About";
 
 export const App: React.FC = () => {
   return (
     <ThemeProvider>
       <GlobalStyle />
-      {/* <HomePage /> */}
-      <About />
+      <AppRoute />
     </ThemeProvider>
   );
 };
