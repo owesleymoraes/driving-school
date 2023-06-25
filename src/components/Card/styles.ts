@@ -26,7 +26,7 @@ export const Image = styled.img<{ descriptionImg?: string }>`
 export const TitleCard = styled.div`
   margin-top: 8px;
   white-space: normal;
-  width: 230px;
+  width: 100%;
 `;
 
 export const DescriptionCard = styled.span`
@@ -37,5 +37,5 @@ export const DescriptionCard = styled.span`
 export const ButtonCard = styled.div``;
 
 export const DescriptionImage = styled.div`
-margin-top: 1rem;
-`
+  margin-top: 1rem;
+`;

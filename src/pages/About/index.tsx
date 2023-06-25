@@ -14,6 +14,7 @@ import orochimaru from "../../assets/orochimaru.jpg";
 import { AboutSvg } from "../../components/ImageSvg/About";
 
 import * as Styled from "./styles";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 export const About: React.FC = () => {
   const navigate = useNavigate();
@@ -24,13 +25,8 @@ export const About: React.FC = () => {
     { image: orochimaru, name: "Orochimaru" },
   ];
 
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-    });
-  }, []);
-
+  useScrollToTop();
+  
   const handleClickGoBack = () => {
     navigate("/");
   };
@@ -118,6 +114,7 @@ export const About: React.FC = () => {
                 key={index}
                 nameImg={item.image}
                 descriptionImage={item.name}
+                onClick={() => {}}
               />
             );
           })}

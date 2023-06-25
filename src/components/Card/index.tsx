@@ -9,7 +9,7 @@ interface CardProps {
   title?: string;
   description?: string;
   descriptionImage?: string;
-  onClick?: () => void;
+  onClick: () => void;
 }
 
 export const Card: React.FC<CardProps> = ({
@@ -41,7 +41,7 @@ export const Card: React.FC<CardProps> = ({
               height={32}
               fontSize={12}
               backgroundColor="transparent"
-              onClick={() => onClick}
+              onClick={() => onClick()}
             >
               Saiba mais
             </Button>

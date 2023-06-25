@@ -67,6 +67,10 @@ export const HomePage: React.FC = () => {
     navigate("/about");
   };
 
+  const handleClickService = () => {
+    navigate("/productDetail");
+  };
+
   return (
     <>
       <Header
@@ -116,31 +120,31 @@ export const HomePage: React.FC = () => {
               nameImg={walletCarMotor}
               title="1ª Habilitação Carro e Moto"
               description="Melhor preço para habitação carro e moto."
-              onClick={() => {}}
+              onClick={() => handleClickService()}
             />
             <Card
               nameImg={walletCar}
               title="1ª Habilitação Carro"
               description="Melhor preço para habilitação de carro."
-              onClick={() => {}}
+              onClick={() => handleClickService()}
             />
             <Card
               nameImg={walletMotor}
               title="1ª Habilitação Moto"
               description="Melhor preço para habilitação de moto."
-              onClick={() => {}}
+              onClick={() => handleClickService()}
             />
             <Card
               nameImg={bus as any}
               title="Categoria D ( Ônibus )"
               description="Melhor preço para habilitação categoria D."
-              onClick={() => {}}
+              onClick={() => handleClickService()}
             />
             <Card
               nameImg={truck as any}
               title="Categoria D ( Caminhão )"
               description="Melhor preço para habilitação categoria D."
-              onClick={() => {}}
+              onClick={() => handleClickService()}
             />
           </Styled.WrapperCard>
           <Button

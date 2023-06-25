@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import road from "../../assets/road.jpg";
 import { Header } from "../../components/Header";
+import { useNavigate } from "react-router-dom";
 import { Footer } from "../../components/Footer";
 import { PinnedItem, PinnedList } from "./styles";
 import { Sections } from "../../components/Sections";
 import { CalloutBody } from "../../components/CalloutBody";
 import { FaIdCard, FaHome, FaScroll } from "react-icons/fa";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 export const ProductDetail: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleClickGoBack = () => {
+    navigate("/");
+  };
+
+ useScrollToTop()
+
   return (
     <div>
-      <Header imageBackground={road} titlePrincipal="Auto Escola Moraes" />
+      <Header
+        imageBackground={road}
+        titlePrincipal="Auto Escola Moraes"
+        hasButton
+        nameButton="Voltar"
+        onClickButton={handleClickGoBack}
+      />
       <Sections>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. In ipsa
