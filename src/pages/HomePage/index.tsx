@@ -43,6 +43,45 @@ export const HomePage: React.FC = () => {
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,doloribus. Quasi quisquam harum ullam.",
     },
   ];
+  const services = [
+    {
+      id: 1,
+      title: "1ª Habilitação Carro e Moto",
+      slang: "categoria-moto-carro",
+      sumary: "Melhor preço para habitação carro e moto.",
+      image: walletCarMotor,
+    },
+
+    {
+      id: 2,
+      title: "1ª Habilitação Carro",
+      slang: "categoria-carro",
+      sumary: "Melhor preço para habilitação de carro.",
+      image: walletCar,
+    },
+
+    {
+      id: 3,
+      title: "1ª Habilitação Moto",
+      slang: "categoria-moto",
+      sumary: "Melhor preço para habitação moto.",
+      image: walletMotor,
+    },
+    {
+      id: 4,
+      title: "Categoria E ( Ônibus )",
+      slang: "categoria-E",
+      sumary: "Melhor preço para habilitação categoria D.",
+      image: bus,
+    },
+    {
+      id: 5,
+      title: "Categoria D ( Caminhão )",
+      slang: "categoria-D-E",
+      sumary: "Melhor preço para habitação categoria D E",
+      image: truck,
+    },
+  ];
 
   const [hiddenAccordion, setHiddenAccordion] = useState(false);
 
@@ -116,36 +155,17 @@ export const HomePage: React.FC = () => {
         <Title tagOfTitle="h2" description={"Conheça nossos serviços"} />
         <Styled.ContainerCard>
           <Styled.WrapperCard openAccordion={hiddenAccordion}>
-            <Card
-              nameImg={walletCarMotor}
-              title="1ª Habilitação Carro e Moto"
-              description="Melhor preço para habitação carro e moto."
-              onClick={() => handleClickService()}
-            />
-            <Card
-              nameImg={walletCar}
-              title="1ª Habilitação Carro"
-              description="Melhor preço para habilitação de carro."
-              onClick={() => handleClickService()}
-            />
-            <Card
-              nameImg={walletMotor}
-              title="1ª Habilitação Moto"
-              description="Melhor preço para habilitação de moto."
-              onClick={() => handleClickService()}
-            />
-            <Card
-              nameImg={bus as any}
-              title="Categoria D ( Ônibus )"
-              description="Melhor preço para habilitação categoria D."
-              onClick={() => handleClickService()}
-            />
-            <Card
-              nameImg={truck as any}
-              title="Categoria D ( Caminhão )"
-              description="Melhor preço para habilitação categoria D."
-              onClick={() => handleClickService()}
-            />
+            {services.map((item, index) => {
+              return (
+                <Card
+                  key={index}
+                  nameImg={item.image}
+                  title={item.title}
+                  description={item.sumary}
+                  onClick={() => navigate(`/productDetail/${item.slang}`)}
+                />
+              );
+            })}
           </Styled.WrapperCard>
           <Button
             borderRadius={8}

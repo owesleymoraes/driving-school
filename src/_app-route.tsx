@@ -10,7 +10,7 @@ export const AppRoute: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
-        <Route path="/productDetail" element={<ProductDetail />} />
+        <Route path="/productDetail/:slang" element={<ProductDetail />} />
       </Routes>
     </BrowserRouter>
   );
