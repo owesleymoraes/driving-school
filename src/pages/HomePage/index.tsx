@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import bus from "../../assets/bus.jpg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import truck from "../../assets/truck.jpg";
 import { Grid } from "../../components/Grid";
 import { Card } from "../../components/Card";
@@ -43,6 +43,7 @@ export const HomePage: React.FC = () => {
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,doloribus. Quasi quisquam harum ullam.",
     },
   ];
+  
   const services = [
     {
       id: 1,
@@ -104,10 +105,6 @@ export const HomePage: React.FC = () => {
 
   const handleClickAbout = () => {
     navigate("/about");
-  };
-
-  const handleClickService = () => {
-    navigate("/productDetail");
   };
 
   return (
