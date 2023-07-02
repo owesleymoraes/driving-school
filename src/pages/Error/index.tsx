@@ -1,12 +1,36 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "../../components/Button";
 import { ErrorSvg } from "../../components/ImageSvg/pageError";
 
 import * as Styled from "./styles";
 
-export const Error: React.FC = () => {
+interface ErrorProps {
+  title?: string;
+  nameButton?: string;
+}
+
+export const Error: React.FC<ErrorProps> = ({
+  title = "Ops! Essa página está na lua.",
+  nameButton = " Página Inicial",
+}) => {
+  const navigate = useNavigate();
+
   return (
     <Styled.ContainerErrorPage>
-      <h4>Ops! Essa página está na lua.</h4>
+      <Styled.Information>
+        <h4>{title}</h4>
+        <Button
+          color="#ffff"
+          backgroundColor="#301f68"
+          width={180}
+          height={60}
+          borderRadius={12}
+          onClick={() => navigate("/")}
+        >
+          {nameButton}
+        </Button>
+      </Styled.Information>
       <ErrorSvg />
     </Styled.ContainerErrorPage>
   );

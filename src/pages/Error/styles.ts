@@ -13,3 +13,8 @@ export const ContainerErrorPage = styled.div`
     max-height: 50%;
   }
 `;
+
+export const Information = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
